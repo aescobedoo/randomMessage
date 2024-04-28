@@ -115,5 +115,5 @@ const random = () => {
   return message;
 }
 
-
+// Code
 console.log(random());
