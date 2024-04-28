@@ -308,4 +308,81 @@ const adjectives = [
   "smooth",
   "rough"
 ];
+const closers = [
+  "goodbye",
+  "bye",
+  "see you later",
+  "see you soon",
+  "take care",
+  "farewell",
+  "until next time",
+  "have a great day",
+  "have a good one",
+  "have a nice day",
+  "have a good day",
+  "have a great weekend",
+  "take it easy",
+  "catch you later",
+  "so long",
+  "later gator",
+  "bye bye",
+  "cheers",
+  "peace out",
+  "adios",
+  "toodles",
+  "later",
+  "ciao",
+  "sayonara",
+  "arrivederci",
+  "auf Wiedersehen",
+  "bon voyage",
+  "until we meet again",
+  "keep in touch",
+  "keep smiling",
+  "stay safe",
+  "take care of yourself",
+  "fare thee well",
+  "Godspeed",
+  "parting is such sweet sorrow",
+  "until next time, my friend",
+  "I bid you adieu",
+  "until we meet again, take care",
+  "may the road rise up to meet you",
+  "may the wind be always at your back",
+  "until we meet again, stay well",
+  "may your days be full of joy",
+  "may your path be filled with light",
+  "may your heart be at peace",
+  "may you find success in all you do",
+  "may your dreams come true",
+  "wishing you all the best",
+  "fare thee well, my friend",
+  "may our paths cross again"
+];
 
+
+//Array of the arrays:
+const master = [openers, verbs, athlethes, foods, prepositions, adjectives, closers];
+let work = [...master];
+
+//Functions
+const randomPicker = array => {
+  picker = Math.floor(Math.random() * array.length)
+  return picker
+}
+
+
+const random = () => {
+  let message = ""
+
+  for (i = 0; i < 4; i++) {
+    let arrSelected = work.splice(randomPicker(work), 1)[0];
+    let messageAppend = arrSelected[randomPicker(arrSelected)];
+    message = message + messageAppend + " ";
+  }
+
+  return message;
+}
+
+
+console.log(random());
